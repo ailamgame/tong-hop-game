@@ -155,7 +155,7 @@ body {
     border-radius: 30px;
     border: none;
     background: linear-gradient(90deg, #00f5ff, #00bfff);
-    color: black;
+    color: black !important;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
