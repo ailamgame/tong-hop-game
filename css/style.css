@@ -12,7 +12,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 40px;
-    color: #e2e8f0;
+    /* color: #e2e8f0; */
 }
 
 /* ================= CONTAINER ================= */
@@ -155,7 +155,7 @@ body {
     border-radius: 30px;
     border: none;
     background: linear-gradient(90deg, #00f5ff, #00bfff);
-    color: black !important;
+    color: black;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
