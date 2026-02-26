@@ -1,6 +1,6 @@
 // js/app.js
 
-const grid = document.getElementById("gameGrid");
+const gameGrid = document.getElementById("gameGrid");
 const modal = document.getElementById("gameModal");
 const closeModal = document.getElementById("closeModal");
 
@@ -9,96 +9,94 @@ const modalTitle = document.getElementById("modalTitle");
 const modalGenre = document.getElementById("modalGenre");
 const modalDescription = document.getElementById("modalDescription");
 const modalFeatures = document.getElementById("modalFeatures");
-const modalPlayButton = document.querySelector("#gameModal .play-now");
 
+const playBtn = document.querySelector(".modal-info .play-now");
+const tutorialBtn = document.getElementById("tutorialBtn");
 
-// ================= RENDER GAME CARDS =================
+let currentGame = null;
+
+/* =========================
+   RENDER GAME LIST
+========================= */
 
 function renderGames() {
-  grid.innerHTML = "";
+    gameGrid.innerHTML = "";
 
-  games.forEach(game => {
-    const card = document.createElement("div");
-    card.className = "game-card";
+    games.forEach(game => {
+        const card = document.createElement("div");
+        card.classList.add("game-card");
 
-    card.innerHTML = `
-      <img src="${game.img}" alt="${game.title}">
-      <div class="game-info">
-        <h3>${game.title}</h3>
-        <span>${game.genre}</span>
-      </div>
-    `;
+        card.innerHTML = `
+            <img src="${game.img}" alt="${game.title}">
+            <div class="game-info">
+                <h3>${game.title}</h3>
+                <span>${game.genre}</span>
+            </div>
+        `;
 
-    card.addEventListener("click", () => openModal(game));
-    grid.appendChild(card);
-  });
+        card.addEventListener("click", () => openModal(game));
+
+        gameGrid.appendChild(card);
+    });
 }
 
-
-// ================= OPEN MODAL =================
+/* =========================
+   OPEN MODAL
+========================= */
 
 function openModal(game) {
-  modalMainImage.src = game.img;
-  modalTitle.textContent = game.title;
-  modalGenre.textContent = game.genre;
-  modalDescription.textContent = game.description;
+    currentGame = game;
 
-  // Render features
-  modalFeatures.innerHTML = "";
-  game.features.forEach(feature => {
-    const li = document.createElement("li");
-    li.textContent = feature;
-    modalFeatures.appendChild(li);
-  });
+    modalMainImage.src = game.img;
+    modalMainImage.alt = game.title;
+    modalTitle.textContent = game.title;
+    modalGenre.textContent = game.genre;
+    modalDescription.textContent = game.description;
 
-  // Gắn link PLAY NOW
-  if (game.link && game.link.trim() !== "") {
-    modalPlayButton.disabled = false;
-    modalPlayButton.style.opacity = "1";
+    // Render features
+    modalFeatures.innerHTML = "";
+    game.features.forEach(feature => {
+        const li = document.createElement("li");
+        li.textContent = feature;
+        modalFeatures.appendChild(li);
+    });
 
-    modalPlayButton.onclick = () => {
-      window.open(game.link, "_blank", "noopener,noreferrer");
+    // Set Play button
+    playBtn.onclick = () => {
+        if (game.link) {
+            window.open(game.link, "_blank");
+        }
     };
-  } else {
-    // Nếu không có link thì disable
-    modalPlayButton.disabled = true;
-    modalPlayButton.style.opacity = "0.5";
-    modalPlayButton.onclick = null;
-  }
 
-  modal.style.display = "flex";
+    // Set Tutorial button
+    if (game.tutorialVideo) {
+        tutorialBtn.style.display = "inline-block";
+        tutorialBtn.onclick = () => {
+            window.open(game.tutorialVideo, "_blank");
+        };
+    } else {
+        tutorialBtn.style.display = "none";
+    }
+
+    modal.style.display = "flex";
 }
 
+/* =========================
+   CLOSE MODAL
+========================= */
 
-// ================= CLOSE MODAL =================
-
-function closeGameModal() {
-  modal.style.display = "none";
-
-  // Reset nội dung (tránh flash khi mở game khác)
-  modalMainImage.src = "";
-  modalTitle.textContent = "";
-  modalGenre.textContent = "";
-  modalDescription.textContent = "";
-  modalFeatures.innerHTML = "";
-}
-
-closeModal.addEventListener("click", closeGameModal);
+closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+});
 
 window.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    closeGameModal();
-  }
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
 });
 
-// Đóng bằng phím ESC
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && modal.style.display === "flex") {
-    closeGameModal();
-  }
-});
-
-
-// ================= INIT =================
+/* =========================
+   INIT
+========================= */
 
 renderGames();

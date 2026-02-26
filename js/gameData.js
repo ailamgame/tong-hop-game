@@ -12,7 +12,8 @@ const games = [
       "Multiplayer online",
       "Hiệu ứng ánh sáng chân thực"
     ],
-    link: "https://ailamgame.github.io/tank-1990/"
+    link: "https://ailamgame.github.io/tank-1990/",
+    tutorialVideo: "https://www.youtube.com/watch?v=f-j9Ciw-K7w&list=RDf-j9Ciw-K7w&start_radio=1"
   },
   {
     id: 2,
@@ -25,6 +26,7 @@ const games = [
       "Nâng cấp tàu chiến",
       "Bản đồ vũ trụ rộng lớn"
     ],
-    link: "https://ailamgame.github.io/tank-1990/"
+    link: "https://ailamgame.github.io/tank-1990/",
+    tutorialVideo: "https://www.youtube.com/watch?v=f-j9Ciw-K7w&list=RDf-j9Ciw-K7w&start_radio=1"
   }
 ];
