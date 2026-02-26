@@ -22,20 +22,88 @@ a {
 /* ================= CONTAINER ================= */
 
 .app-container {
+    margin-top: 120px;
     width: 1200px;
     background: linear-gradient(145deg, #0f172a, #1e293b);
-    border-radius: 24px;
+    border-radius: 20px;
     padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
 }
 
 /* ================= NAVBAR ================= */
 
+/* ================= FLOATING NAVBAR ================= */
+
 .navbar {
+    position: fixed;
+    top: 30px;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Khối chính */
+.navbar-wrapper {
+    width: 1500px;
+    display: flex;
     align-items: center;
-    margin-bottom: 50px;
+    justify-content: space-between;
+
+    padding: 14px 30px;
+    border-radius: 20px;
+
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.4),
+        inset 0 0 30px rgba(255, 255, 255, 0.03);
+}
+
+/* Menu */
+.menu {
+    display: flex;
+    gap: 35px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #cbd5e1;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+.menu a.active {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+}
+
+/* Login Button */
+.login-btn {
+    border: none;
+    padding: 8px 22px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(90deg, #ff7a18, #ffb347);
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 140, 0, 0.5);
 }
 
 .logo {
@@ -43,13 +111,13 @@ a {
     align-items: center;
     gap: 12px;
     font-weight: 700;
-    font-size: 32px;
+    font-size: 20px;
     color: #ffffff;
     letter-spacing: 0.5px;
 }
 
 .logo img {
-    height: 80px;
+    height: 50px;
     /* chỉnh theo logo bạn */
     width: auto;
     border-radius: 100%;
