@@ -113,7 +113,7 @@ function openModal(game) {
 
     playBtn.onclick = () => {
         if (game.link) {
-            window.open(game.link, "_blank");
+            window.location.href = game.link;
         }
     };
 
