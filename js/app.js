@@ -30,7 +30,7 @@ function renderGames() {
             <img src="${game.img}" alt="${game.title}">
             <div class="game-info">
                 <h3>${game.title}</h3>
-                <span>${game.genre}</span>
+                <span>Dành cho: ${game.platform}</span>
             </div>
         `;
 
