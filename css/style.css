@@ -770,3 +770,87 @@ a {
         padding: 6px 10px;
     }
 }
+
+/* ---------- TYPE BADGE (app / game) ---------- */
+.game-card {
+    position: relative; /* badge sẽ căn vào góc trên phải */
+}
+
+/* badge base */
+.type-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 5;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.45);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none; /* tránh cản click vào card/button */
+}
+
+/* style cho game */
+.type-badge.game {
+    background: linear-gradient(90deg,#ff4d97,#ff8fb3);
+    color: #fff;
+}
+
+/* style cho app */
+.type-badge.app {
+    background: linear-gradient(90deg,#00d4ff,#00a3ff);
+    color: #07172a;
+}
+
+/* style mặc định/khác */
+.type-badge.other {
+    background: linear-gradient(90deg,#9ca3ff,#7c93ff);
+    color: #fff;
+}
+
+/* nhỏ gọn trên màn hình nhỏ */
+@media (max-width: 767px) {
+    .type-badge {
+        top: 8px;
+        right: 8px;
+        font-size: 11px;
+        padding: 5px 8px;
+        border-radius: 8px;
+    }
+}
+
+/* ===== TYPE FILTER ===== */
+
+.type-filter {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.filter-btn {
+    padding: 8px 18px;
+    border-radius: 25px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: transparent;
+    color: #cbd5e1;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-btn:hover {
+    background: rgba(255,255,255,0.08);
+    color: #ffffff;
+}
+
+.filter-btn.active {
+    background: linear-gradient(90deg, #00f5ff, #00bfff);
+    color: #0f172a;
+    border: none;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
