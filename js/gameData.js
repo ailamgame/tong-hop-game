@@ -2,6 +2,13 @@
 
 const games = [
   {
+  id: 4,
+  title: "Theo dõi hành trình lớn khôn",
+  platform: ["PC", "Mobile"], // PC | Mobile | ["PC","Mobile"]
+  img: "assets/images/app-baby-days.jpeg",
+  link: "https://ailamgame.github.io/baby-days/", // sửa lại nếu link khác
+},
+  {
   id: 3,
   title: "Flappy Kpop",
   platform: ["PC", "Mobile"], // PC | Mobile | ["PC","Mobile"]
