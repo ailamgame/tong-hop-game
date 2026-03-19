@@ -2,6 +2,14 @@
 
 const games = [
   {
+    id: 5,
+    title: "Sự kiện sắp tới",
+    type: "app", // app | game
+    platform: ["PC", "Mobile"],
+    img: "assets/images/app-su-kien-sap-toi.jpeg",
+    link: "https://ailamgame.github.io/baby-days/",
+  },
+  {
     id: 4,
     title: "Theo dõi hành trình lớn khôn",
     type: "app", // app | game
