@@ -7,7 +7,7 @@ const games = [
     type: "app", // app | game
     platform: ["PC", "Mobile"],
     img: "assets/images/app-su-kien-sap-toi.jpeg",
-    link: "https://ailamgame.github.io/baby-days/",
+    link: "https://ailamgame.github.io/su-kien-sap-toi/",
   },
   {
     id: 4,
