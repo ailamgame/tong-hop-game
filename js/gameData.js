@@ -2,6 +2,14 @@
 
 const games = [
   {
+    id: 6,
+    title: "Bộ đếm",
+    type: "app", // app | game
+    platform: ["PC", "Mobile"],
+    img: "assets/images/app-bo-dem.jpeg",
+    link: "https://ailamgame.github.io/bo-dem/",
+  },
+  {
     id: 5,
     title: "Sự kiện sắp tới",
     type: "app", // app | game
