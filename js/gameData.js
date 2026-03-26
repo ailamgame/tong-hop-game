@@ -2,6 +2,14 @@
 
 const games = [
   {
+    id: 7,
+    title: "Quản lý mật khẩu",
+    type: "app", // app | game
+    platform: ["PC", "Mobile"],
+    img: "assets/images/app-quan-ly-mat-khau.jpeg",
+    link: "https://ailamgame.github.io/quan-ly-mat-khau/",
+  },
+  {
     id: 6,
     title: "Bộ đếm",
     type: "app", // app | game
